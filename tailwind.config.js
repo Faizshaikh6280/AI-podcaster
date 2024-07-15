@@ -1,18 +1,49 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        white: {
+          1: "#FFFFFF",
+          2: "rgba(255, 255, 255, 0.72)",
+          3: "rgba(255, 255, 255, 0.4)",
+          4: "rgba(255, 255, 255, 0.64)",
+          5: "rgba(255, 255, 255, 0.80)",
+        },
+        black: {
+          1: "#15171C",
+          2: "#222429",
+          3: "#101114",
+          4: "#252525",
+          5: "#2E3036",
+          6: "#24272C",
+        },
+        orange: {
+          1: "#F97535",
+        },
+        gray: {
+          1: "#71788B",
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
